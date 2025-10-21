@@ -4,8 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface TimesheetRepository extends JpaRepository<Timesheet, Long>{
-    List<Timesheet> findByComment(String comment);
+public interface TimesheetRepository extends JpaRepository<Timesheet2, Long>{
+    List<Timesheet2> findByComment(String comment);
 
-    Timesheet findById(long id);
+    Timesheet2 findById(long id);
 }

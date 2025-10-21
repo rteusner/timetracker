@@ -4,17 +4,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Timesheet {
+public class Timesheet2 {
 
     @Id
     private Long id;
     private Long hoursWorked;
     private String comment;
 
-    public Timesheet() {
+    public Timesheet2() {
     }
 
-    public Timesheet(Long hoursWorked, String comment) {
+    public Timesheet2(Long hoursWorked, String comment) {
         this.hoursWorked = hoursWorked;
         this.comment = comment;
     }
