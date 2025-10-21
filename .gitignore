@@ -33,3 +33,5 @@ build/
 ### VS Code ###
 .vscode/
 /src/main/frontend/generated/
+/src/main/resources/data/timetrackerdb.mv.db
+/src/main/resources/data/timetrackerdb.trace.db
