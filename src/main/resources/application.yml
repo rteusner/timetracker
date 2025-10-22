@@ -3,11 +3,11 @@ spring:
     name: timetracker
   datasource:
     url: jdbc:h2:file:./src/main/resources/data/timetrackerdb;AUTO_SERVER=TRUE
-    #url: jdbc:h2:file:./src/main/resources/data/timetrackerdb;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
-    #url: jdbc:h2:mem:mydb # alternative: url: jdbc:h2:file:/data/demo
     username: root
     password: password
     driverClassName: org.h2.Driver
+    #url: jdbc:h2:file:./src/main/resources/data/timetrackerdb;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+    #url: jdbc:h2:mem:mydb # alternative: url: jdbc:h2:file:/data/demo
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
