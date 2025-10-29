@@ -22,6 +22,11 @@ public class UserController {
 
     @PostMapping("createUser")
     public User createUser(@RequestParam String name, @RequestParam String password) {
+        //alternative
+//        User myUser1 = new User();
+//        myUser1.setName(name);
+//        myUser1.setPassword(password);
+
         User myUser = User.builder().name(name).password(password).build();
         userRepository.save(myUser);
         return myUser;

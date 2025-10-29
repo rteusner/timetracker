@@ -1,38 +1,22 @@
 package de.thbrandenburg.rt.timetracker.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "TIMESHEETENTRIES")
 public class TimesheetEntry {
     @Id
-    @NotNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TIMESHEETENTRYID", nullable = false)
-    private Long timesheetentryid;
+    private Long id;
 
     @Size(max = 255)
     @Column(name = "COMMENT")
     private String comment;
-
-    public Long getTimesheetentryid() {
-        return timesheetentryid;
-    }
-
-    public void setTimesheetentryid(Long timesheetentryid) {
-        this.timesheetentryid = timesheetentryid;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
 
 }
