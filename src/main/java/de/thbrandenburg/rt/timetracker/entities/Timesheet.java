@@ -2,7 +2,14 @@ package de.thbrandenburg.rt.timetracker.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter
+@Setter
 @Entity
 @Table(name = "TIMESHEETS")
 public class Timesheet {
@@ -15,20 +22,7 @@ public class Timesheet {
     @Column(name = "COMMENT")
     private String comment;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
+    //@OneToMany(mappedBy = "timesheet")
+    //private List<TimesheetEntry> timesheetEntries = new ArrayList<>();
 
 }

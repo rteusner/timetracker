@@ -13,12 +13,5 @@ public class TimetrackerApplication implements AppShellConfigurator {
     public static void main(String[] args) {
         SpringApplication.run(TimetrackerApplication.class, args);
 
-        Timesheet2 timesheet = new Timesheet2();
-        timesheet.setComment("Hallo THB!");
-
-        //myRepo.save(timesheet);
-
-        //Timesheet mysecondTimesheet = myRepo.findByComment("Hallo THB!");
-
     }
 }

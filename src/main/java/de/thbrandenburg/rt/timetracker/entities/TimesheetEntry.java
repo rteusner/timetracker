@@ -19,4 +19,12 @@ public class TimesheetEntry {
     @Column(name = "COMMENT")
     private String comment;
 
+    @Column(name = "HOURSWORKED")
+    private Long hoursWorked;
+
+
+    //@ManyToOne
+    //@JoinColumn(name="TIMEHSEETID", nullable=false)
+    //private Timesheet timesheet;
+
 }

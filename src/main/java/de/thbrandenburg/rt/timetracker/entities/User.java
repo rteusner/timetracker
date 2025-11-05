@@ -9,7 +9,8 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "USERS", schema = "TIMETRACKER")
+@ToString
+@Table(name = "USERS")
 public class User {
 
     @Getter
