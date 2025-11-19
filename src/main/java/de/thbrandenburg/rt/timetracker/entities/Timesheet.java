@@ -22,7 +22,7 @@ public class Timesheet {
     @Column(name = "COMMENT")
     private String comment;
 
-    //@OneToMany(mappedBy = "timesheet")
-    //private List<TimesheetEntry> timesheetEntries = new ArrayList<>();
+    @OneToMany(mappedBy = "timesheet")
+    private List<TimesheetEntry> timesheetEntries = new ArrayList<>();
 
 }

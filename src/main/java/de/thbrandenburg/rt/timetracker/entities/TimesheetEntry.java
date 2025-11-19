@@ -4,10 +4,12 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @Entity
+@ToString
 @Table(name = "TIMESHEETENTRIES")
 public class TimesheetEntry {
     @Id
@@ -23,8 +25,8 @@ public class TimesheetEntry {
     private Long hoursWorked;
 
 
-    //@ManyToOne
-    //@JoinColumn(name="TIMEHSEETID", nullable=false)
-    //private Timesheet timesheet;
+    @ManyToOne
+    @JoinColumn(name="TIMEHSEETID", nullable=false)
+    private Timesheet timesheet;
 
 }
