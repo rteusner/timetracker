@@ -20,5 +20,5 @@ spring:
     locations: classpath:db/migration
     baseline-on-migrate: true
   thymeleaf:
-    prefix: src/main/resources/templates/ #classpath:/templates/
+    #prefix: src/main/resources/templates/ #classpath:/templates/
     enabled: true
