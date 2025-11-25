@@ -16,7 +16,7 @@ public class HelloController {
     @RequestMapping(value = "/hellothyme")
     public String home(Model model) {
         model.addAttribute("message", "Hello, World!");
-        return "index.html";
+        return "index";
     }
 
 }
