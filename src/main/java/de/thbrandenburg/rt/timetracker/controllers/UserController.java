@@ -3,21 +3,35 @@ package de.thbrandenburg.rt.timetracker.controllers;
 import de.thbrandenburg.rt.timetracker.entities.User;
 import de.thbrandenburg.rt.timetracker.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+import java.util.List;
+
+@Controller
 public class UserController {
 
     @Autowired
     UserRepository userRepository;
 
-    @GetMapping("/helloUser1")
-    public String hello(@RequestParam long id) {
-        System.out.println(userRepository.findById(id).toString());
-        return "test";
+    @GetMapping("/getUser")
+    public String getUser(Model model, @RequestParam long id) {
+        User user = userRepository.findById(id).orElseThrow();
+        System.out.println(user);
+        model.addAttribute("user", user);
+        return "user/userDetails";
+    }
+
+    @GetMapping("/getUsers")
+    public String getUser(Model model) {
+        List<User> users = (List<User>) userRepository.findAll();
+        for(User user : users) {
+            System.out.println(user.getName());
+            System.out.println(user);
+        }
+        model.addAttribute("users",  userRepository.findAll());
+        return "user/userList";
     }
 
     @PostMapping("createUser")

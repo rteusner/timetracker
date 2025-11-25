@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Bare - Spring Boot / Thymeleaf</title>
+</head>
+<body>
+<tr th:each="user : ${users}">
+    <td th:text="${user.id}">ID</td>
+    <td><a href="#" th:text="${user.getName()}">Name ...</a></td>
+    <td th:text="${user.password}">Password ...</td>
+</tr>
+</body>
+</html>
